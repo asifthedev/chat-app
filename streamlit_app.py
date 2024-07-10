@@ -9,10 +9,10 @@ client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 if "message" not in st.session_state:
     st.session_state["message"] = []
-else:
-    for message in st.session_state["message"]:
-        with st.chat_message(message['role']):
-            st.markdown(message['content'], unsafe_allow_html=True)
+
+for message in st.session_state["message"]:
+    with st.chat_message(message['role']):
+        st.markdown(message['content'], unsafe_allow_html=True)
 
 prompt = st.chat_input("What is up?")
 
@@ -32,5 +32,9 @@ if prompt:
 
     st.session_state["message"].append({'role': "user", 'content': prompt})
 
+    bot_ans = response.choices[0].message.content
+
     with st.chat_message("assistant"):
-        st.markdown(response.choices[0].message.content, unsafe_allow_html=True)
+        st.markdown(bot_ans, unsafe_allow_html=True)
+
+    st.session_state["message"].append({'role': "assistant", 'content': bot_ans})
