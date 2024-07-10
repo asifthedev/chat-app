@@ -2,8 +2,8 @@ import os
 import streamlit as st
 from openai import OpenAI
 
-st.title("Ubuntu OS")
-client = OpenAI(api_key='sk-proj-XaPlGgHsxFWP4vpEInWTT3BlbkFJ6MJfwEzjpEwGVr2bSuYG')
+st.title("GPT Clone")
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 if "message" not in st.session_state:
     st.session_state["message"] = []
