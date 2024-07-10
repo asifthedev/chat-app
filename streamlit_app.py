@@ -3,7 +3,7 @@ import streamlit as st
 from openai import OpenAI
 
 st.title("Ubuntu OS")
-client = OpenAI(api_key='sk-proj-yYMgNgELGzz9pRYcvpyqT3BlbkFJ1eOlgrxp1Ptli5w1zh9N')
+client = OpenAI(api_key='sk-proj-XaPlGgHsxFWP4vpEInWTT3BlbkFJ6MJfwEzjpEwGVr2bSuYG')
 
 if "message" not in st.session_state:
     st.session_state["message"] = []
