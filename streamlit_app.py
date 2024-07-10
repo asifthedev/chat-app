@@ -3,7 +3,7 @@ import streamlit as st
 from openai import OpenAI
 
 st.title("GPT Clone")
-client = OpenAI(api_key=os.getenv('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'))
+client = OpenAI(api_key='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')
 
 if "message" not in st.session_state:
     st.session_state["message"] = []
