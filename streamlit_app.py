@@ -4,7 +4,7 @@ from openai import OpenAI
 
 os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 
-st.title("GPT Clone")
+st.title(":red[Ubuntu] Bot")
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 if "message" not in st.session_state:
