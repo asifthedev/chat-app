@@ -18,7 +18,7 @@ def linux_admin() -> object:
         {'role': "user", 'content': prompt}
     ]
     response = client.chat.completions.create(
-        model=os.getenv('turbo_3'),
+        model='gpt-3.5-turbo-16k',
         messages=conversation,
         temperature=1,
         max_tokens=400,
