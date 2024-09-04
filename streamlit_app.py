@@ -5,7 +5,7 @@ from openai import OpenAI
 os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 
 # Configuration and Initialization
-st.title("Linux :red[Administrator]")
+st.title("Python :red[Assitant]")
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 if "message" not in st.session_state:
@@ -14,7 +14,7 @@ if "message" not in st.session_state:
 # Function Definitions
 def linux_admin() -> object:
     conversation = [
-        {'role': "system", 'content': "Assume you are a chat bot who's expert with over 10 years of experience in Linux operating system administration. And a student who's curious and want to clear his doubts chatting with you on WhatsApp. Do not forget to include bash code example while answering. Note keep your answer short and concise as possible "},
+        {'role': "system", 'content': "You are a python code assitant who helps the students whe they are facing python related errors in their code"},
         {'role': "user", 'content': prompt}
     ]
     response = client.chat.completions.create(
